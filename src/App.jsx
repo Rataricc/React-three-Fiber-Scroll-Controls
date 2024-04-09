@@ -1,12 +1,7 @@
 import { Suspense } from "react";
 import "./App.css";
-//import "./termemotro.css";
-
 import Scene from "./components/Scene";
-//import Labels2 from "./components/Labels2.0";
-//import Labels2 from "./components/Labels2.0";
-//import Labels from "./components/Labels";
-//aca iba el componente lebels; 
+import Labels from "./components/Labels";
 
 function App() {
     return (
@@ -16,8 +11,7 @@ function App() {
                     <Scene />
                 </Suspense>
             </div>
-            {/*<Labels/> 
-            <Labels2 /> */}
+            <Labels  />
             
         </>
     );

@@ -1,50 +1,63 @@
-import * as THREE from  'three'; 
-
 export const GenerateAnimations = (scene) => {
     const Anamations = [
-        {
-            target: scene.getObjectByName("Sketchfab_model").rotation, 
-            pointTime: 0, 
-            animationsProperties: {
-                x: 0,
-                //y: 1, 
-                //z: 1, 
-                onUpdate: () => {}, 
-            }, 
-        }, 
-
-        {
-            target: scene.getObjectByName("Sketchfab_model").rotation, 
-            pointTime: 1, 
-            animationsProperties: {
-                //x: 1, 
-                y: 1,
-                z: 1,
-                  
-                onUpdate: () => {}, 
-            }, 
-        }, 
-
-        {
-            target: scene.getObjectByName("Sketchfab_model").rotation, 
-            pointTime: 2, 
-            animationsProperties: {
-                y: 1, 
-                onUpdate: () => {}, 
-            }, 
-        }, 
-        
-        {
-            target: scene.getObjectByName("Sketchfab_model").rotation, 
-            pointTime: 3, 
-            animationsProperties: {
-                //y: 2, 
-                x: 1,
-                //z: 1, 
-                
-                onUpdate: () => {}, 
-            }, 
+        //page 1
+      {
+        target: scene.getObjectByName("Sketchfab_model").rotation,
+        pointTime: 0,
+        animationsProperties: {
+          y: 0, // Rotación inicial
+          onUpdate: () => {},
+        },
+      },
+      {
+        target: document.getElementById("TopRightLabel"), 
+        pointTime:0, 
+        animationsProperties: {
+            opacity: 1, 
+            //left: "25%", 
+            onUpdate: () => {}, 
         }
-    ]; 
-    return Anamations; 
-}
+      }, 
+        //page 2
+      {
+        target: scene.getObjectByName("Sketchfab_model").rotation,
+        pointTime: 1,
+        animationsProperties: {
+          y: Math.PI  , // Rotación de 90 grados (1/4 de vuelta)
+          onUpdate: () => {},
+        },
+      },
+      {
+        target: document.getElementById("TopLeftLabel"), 
+        pointTime:1, 
+        animationsProperties: {
+            opacity: 1, 
+            //left: "25%", 
+            onUpdate: () => {}, 
+        }
+      }, 
+      
+      //page 3
+      {
+        target: scene.getObjectByName("Sketchfab_model").rotation,
+        pointTime: 2,
+        animationsProperties: {
+          y: Math.PI, // Rotación de 180 grados (media vuelta)
+          onUpdate: () => {},
+        },
+      },
+      
+        //page 4
+      {
+        target: scene.getObjectByName("Sketchfab_model").rotation,
+        pointTime: 3,
+        animationsProperties: {
+          //y: (3 * Math.PI) / 2, // Rotación de 270 grados (3/4 de vuelta)
+          onUpdate: () => {},
+        },
+      },
+    ];
+    return Anamations;
+  };
+  
+
