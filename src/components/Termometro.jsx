@@ -11,7 +11,7 @@ export function Termometro(props) {
     
     const timeline = gsap.timeline({
         defaults: {
-            duration: 3,
+            duration: 1,
             ease: Power4.easeInOut
         }
     });
